@@ -48,4 +48,17 @@ class TarefaController extends Controller
 
         return redirect()->route('index');
     }
+
+    public function viewTasksFinished(){
+
+        return view('content.tasks.task-finished', ['tasks' => Tarefa::where('status', 'Finalizada')->get()]);
+    }
+
+    public function backTasks($id){
+        $task = Tarefa::find($id);
+        $task->status = "Em progresso";
+        $task->save();
+
+        return redirect()->route('index');
+    }
 }

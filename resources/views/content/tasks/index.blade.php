@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="col-12">
-                  <button type="submit" class="btn btn-warning">Ver todas</button>
+                  <a href="{{ route('viewTasksFinished') }}" class="btn btn-warning">Ver todas</a>
                 </div>
               </form>
 

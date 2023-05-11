@@ -23,4 +23,6 @@ Route::prefix('/')->group(function () {
     Route::post('/', [TarefaController::class, 'store'])->name('store');
     Route::delete('/destroy/{id}', [TarefaController::class, 'destroy'])->name('destroy');
     Route::post('/finished/{id}', [TarefaController::class, 'finishedTask'])->name('finishedTask');
+    Route::get('/tasks-finished', [TarefaController::class, 'viewTasksFinished'])->name('viewTasksFinished');
+    Route::get('/back-task/{id}', [TarefaController::class, 'backTasks'])->name('backTasks');
 });
